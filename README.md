@@ -1,24 +1,40 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+============
 
-Things you may want to cover:
+USER STORIES
+============
+```
+As a User
+so that my net income position can be determined
+I want to be able to input income items into the app
 
-* Ruby version
+As a User
+so that my net income position can be determined
+I want to be able to input expense items into the app
 
-* System dependencies
+As a User
+so that I can track whether my net income can meet that goal
+I want to be able to input a financial goal (expressed as an amount and target date) into the app
 
-* Configuration
+As a User
+so that I can track whether my net income can meet that goal
+I want to be able to view the extent (expressed as a % and an amount) to which I am on target to achieve my financial goal
 
-* Database creation
+As a User
+So that I can access the site features,
+I want to be able to sign up for the website.
 
-* Database initialization
+As a User
+So that I can access my account multiple times,
+I want to be able to sign in and out.
 
-* How to run the test suite
+BONUS:
+As a User
+so that I can assess the effect of these altered assumptions on the date when financial goal can be achieved
+I want to be able to change projected income/expense assumptions
 
-* Services (job queues, cache servers, search engines, etc.)
+As a User
+So that I have a nice experience on the website
+I want it to have a visually pleasing layout.
+```
 
-* Deployment instructions
-
-* ...
