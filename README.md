@@ -1,4 +1,3 @@
-
 ============
 
 USER STORIES
@@ -38,3 +37,13 @@ So that I have a nice experience on the website
 I want it to have a visually pleasing layout.
 ```
 
+Database set up for development environments
+--------------------------------------------
+
+Millionaire-machine has a PostgreSQL database.
+
+On each new pull from master, if there are DB changes it is recommended that you run
+```bin/rake db:setup``` on the first install (creates, runs migrations and seed)
+```bin/rake db:reset`` thereafter (drops and runs set up)
+
+These commands handle required drop, schema creation or updates and seed with data listed in db/seeds.rb.
