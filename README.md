@@ -1,5 +1,4 @@
 ============
-
 USER STORIES
 ============
 ```
@@ -36,6 +35,7 @@ As a User
 So that I have a nice experience on the website
 I want it to have a visually pleasing layout.
 ```
+
 Site Map
 --------
 Inline-style:
@@ -55,3 +55,4 @@ On each new pull from master, if there are DB changes it is recommended that you
 ```bin/rake db:reset`` thereafter (drops and runs set up)
 
 These commands handle required drop, schema creation or updates and seed with data listed in db/seeds.rb.
+

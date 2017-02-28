@@ -1,0 +1,6 @@
+
+// function Calculator(){
+//
+// }
+//
+// Calculator.prototype
