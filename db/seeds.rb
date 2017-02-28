@@ -12,5 +12,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-  incomes = Income.create([{ amount: 100, name:'rent', date: nil, actual: nil, frequency: nil  },
-    { amount: 10, name:'gift', date: nil, actual: nil, frequency: nil}])
+  
