@@ -10,10 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170228104421) do
+=======
+ActiveRecord::Schema.define(version: 20170228113514) do
+>>>>>>> 0cb628a1cc71e3a4802e637165f1d92029462805
+=======
+ActiveRecord::Schema.define(version: 20170228113514) do
+>>>>>>> ea61e3ac3164bef45d30526697469576fe52a708
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+
+  create_table "incomes", force: :cascade do |t|
+
+  create_table "expenditures", force: :cascade do |t|
+
+  create_table "expenditures", force: :cascade do |t|
+    t.integer  "amount"
+    t.string   "name"
+    t.date     "date"
+    t.boolean  "actual"
+    t.string   "frequency"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "incomes", force: :cascade do |t|
     t.integer  "amount"
