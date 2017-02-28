@@ -25,4 +25,14 @@ ActiveRecord::Schema.define(version: 20170228113514) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "incomes", force: :cascade do |t|
+    t.integer  "amount"
+    t.string   "name"
+    t.date     "date"
+    t.boolean  "actual"
+    t.string   "frequency"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end
