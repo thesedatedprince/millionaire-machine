@@ -36,7 +36,15 @@ As a User
 So that I have a nice experience on the website
 I want it to have a visually pleasing layout.
 ```
+Site Map
+--------
+Inline-style:
+![SiteMap](https://github.com/thesedatedprince/millionaire-machine/blob/master/Sitemap.png)
 
+Wireframes
+----------
+Inline-style:
+![Userscreens](https://github.com/thesedatedprince/millionaire-machine/blob/master/Userscreens.png)
 Database set up for development environments
 --------------------------------------------
 
