@@ -1,6 +1,5 @@
 
 ============
-
 USER STORIES
 ============
 ```
@@ -37,4 +36,3 @@ As a User
 So that I have a nice experience on the website
 I want it to have a visually pleasing layout.
 ```
-
