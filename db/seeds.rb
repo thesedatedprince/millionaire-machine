@@ -3,5 +3,5 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+   expenditure = Expenditure.create([{amount: 100, name: 'rent', date: '16/02/2017', actual: true, frequency: 'Daily'}])
 #   Character.create(name: 'Luke', movie: movies.first)
