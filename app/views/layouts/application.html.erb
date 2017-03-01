@@ -9,6 +9,7 @@
   </head>
   <body>
     <% if user_signed_in? %>
+      <!-- <a href="goal/new">Add a goal</a> -->
       <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
       <%= link_to "Add a goal", new_goal_path %>
       <% else %>
