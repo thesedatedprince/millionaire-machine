@@ -13,7 +13,7 @@ feature 'Incomes' do
       fill_in 'Frequency', with: 'weekly'
       click_button 'Add Entry'
       expect(page).to have_content 'Salary'
-      expect(current_path).to eq '/dashboard'
+      expect(current_path).to eq '/'
     end
 
 end

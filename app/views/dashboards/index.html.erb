@@ -5,5 +5,12 @@
 <div id="chart-container" style="width:70%; height:400px; padding-left: 12%; padding-top: 5%;"></div>
 <br></br>
 <div id="progress-bar-container"></div>
+<% if @income.any? %>
+
+
+ <% @income.each do |income| %>
+    <%= income.name %>
+ <% end %>
+<% end %>
 
 <a href='/incomes/new'>Add Income</a>
