@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :incomes, dependent: :destroy
   has_many :expenditures, dependent: :destroy
+  has_one :goal
 end
