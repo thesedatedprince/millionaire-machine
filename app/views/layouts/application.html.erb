@@ -11,8 +11,8 @@
   </head>
   <body>
     <% if user_signed_in? %>
-      <a href="/projections/new">Add Projection</a>
       <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+      <%= link_to "Add Projection", new_projection_path %>
       <%= link_to "Add a goal", new_goal_path %>
       <% else %>
       <%= link_to "Sign in", new_user_session_path %>
