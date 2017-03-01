@@ -7,7 +7,8 @@ user = User.create! :email => 'john@gmail.com', :password => 'topsecret', :passw
 
   goal = Goal.create([{amount: 1000, name: 'Nepalese Trek', start_date: '01/01/2017', target_date: '01/12/2017', user_id: 1}])
 
-  incomes = Income.create([{ amount: 100, name:'aaaa', date: '01/01/2017', user_id: 1 },
+
+incomes = Income.create([{ amount: 100, name:'aaaa', date: '01/01/2017', user_id: 1 },
     { amount: 70, name:'mmmm', date: '01/02/2017', user_id: 1},
     { amount: 60, name:'nnnn', date: '01/03/2017', user_id: 1},
     { amount: 70, name:'oooo', date: '01/04/2017', user_id: 1},
