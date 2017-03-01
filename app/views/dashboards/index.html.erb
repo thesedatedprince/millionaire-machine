@@ -11,6 +11,18 @@
  <% @income.each do |income| %>
     <%= income.name %>
  <% end %>
+ <% else %>No Incomes Added
+
+<% end %>
+
+<% if @expenditure.any? %>
+
+
+ <% @expenditure.each do |expenditure| %>
+    <%= expenditure.name %>
+ <% end %>
+ <% else %>No Expenditures Added
 <% end %>
 
 <a href='/incomes/new'>Add Income</a>
+<a href='/expenditures/new'>Add Expenditure</a>
