@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170301095640) do
+ActiveRecord::Schema.define(version: 20170301173514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,8 +19,6 @@ ActiveRecord::Schema.define(version: 20170301095640) do
     t.integer  "amount"
     t.string   "name"
     t.date     "date"
-    t.boolean  "actual"
-    t.string   "frequency"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
@@ -42,12 +40,20 @@ ActiveRecord::Schema.define(version: 20170301095640) do
     t.integer  "amount"
     t.string   "name"
     t.date     "date"
-    t.boolean  "actual"
-    t.string   "frequency"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.index ["user_id"], name: "index_incomes_on_user_id", using: :btree
+  end
+
+  create_table "projections", force: :cascade do |t|
+    t.integer  "projected_monthly_income"
+    t.integer  "projected_monthly_expenditure"
+    t.date     "start_date"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_projections_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -70,4 +76,5 @@ ActiveRecord::Schema.define(version: 20170301095640) do
   add_foreign_key "expenditures", "users"
   add_foreign_key "goals", "users"
   add_foreign_key "incomes", "users"
+  add_foreign_key "projections", "users"
 end
