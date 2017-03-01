@@ -1,5 +1,0 @@
-class IncomeController < ApplicationController
-
-  
-
-end
