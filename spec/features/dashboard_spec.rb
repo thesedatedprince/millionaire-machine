@@ -5,4 +5,8 @@ feature 'Dashboard' do
     visit ('/')
     expect(page).to have_content ("Dashboard")
   end
+
+  scenario 'user can add income' do
+    
+  end
 end
