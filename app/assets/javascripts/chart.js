@@ -1,4 +1,26 @@
 
+//Puts the data into a form consumable by the chart
+function constructChartDataArray(incomeData,expData){
+
+  var incomeDataArray = [];
+  var expDataArray = [];
+  var dateArray = [];
+
+  for (i=0; i < incomeData.length; ++i){
+
+    incomeDataArray.push(incomeData[i].amount);
+    dateArray.push(incomeData[i].date);
+  }
+
+  for (i=0; i < expData.length; ++i){
+
+    expDataArray.push(expData[i].amount);
+
+  }
+  return [dateArray, incomeDataArray, expDataArray];
+}
+
+
 function getChart(chartData){
 
   Highcharts.setOptions({
@@ -19,13 +41,13 @@ function getChart(chartData){
 
   var myChart = Highcharts.chart('chart-container', {
       chart: {
-          type: 'column'
+          type: 'line'
       },
       title: {
           text: 'Income and Expenditure'
       },
       xAxis: {
-          categories: ['Jan', 'Feb', 'Mar', 'Apr']
+          categories: chartData[0]
       },
       yAxis: {
           title: {
@@ -34,10 +56,10 @@ function getChart(chartData){
       },
       series: [{
           name: 'Income',
-          data: chartData[0]
+          data: chartData[1]
       }, {
           name: 'Expenditure',
-          data: chartData[1]
+          data: chartData[2]
       }]
   });
 
