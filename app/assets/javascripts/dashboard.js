@@ -23,7 +23,7 @@ $(document).ready(function () {
     function getIncome(){
 
       return $.ajax({
-        url: '/income',
+        url: '/incomes',
         dataType: 'json',
         success: function(data){
           console.log("data loaded")
@@ -35,7 +35,7 @@ $(document).ready(function () {
     function getExpenditure(){
 
       return $.ajax({
-        url: '/expenditure',
+        url: '/expenditures',
         dataType: 'json',
         success: function(data){
           console.log("data loaded")
