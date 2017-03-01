@@ -1,0 +1,13 @@
+<%= form_for @income do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :amount %>
+  <%= f.text_field :amount %>
+  <%= f.label :date %>
+  <%= f.text_field :date %>
+  <%= f.label :actual %>
+  <%= f.text_field :actual %>
+  <%= f.label :frequency %>
+  <%= f.text_field :frequency %>
+  <%= f.submit %>
+<% end %>

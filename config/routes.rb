@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   # root 'application#hello'
 
   root 'dashboards#index'
+  resources:dashboards
+  resources:incomes
 
 end
