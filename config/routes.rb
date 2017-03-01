@@ -8,5 +8,8 @@ Rails.application.routes.draw do
   resources :expenditure
 
   root 'dashboards#index'
+  resources:dashboards
+  resources:incomes
+  resources:expenditures
 
 end
