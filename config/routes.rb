@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :dashboards
   resources :income
   resources :expenditure
+  resources :goal
 
   root 'dashboards#index'
 
