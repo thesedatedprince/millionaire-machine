@@ -15,8 +15,6 @@ feature 'Incomes' do
       fill_in 'Amount', with: '100'
       fill_in 'Name', with: 'Salary'
       fill_in 'Date', with: '28-02-2017'
-      fill_in 'Actual', with: 'true'
-      fill_in 'Frequency', with: 'weekly'
       click_button 'Add Entry'
       expect(page).to have_content 'Salary'
       expect(current_path).to eq '/'
