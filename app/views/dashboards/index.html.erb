@@ -11,6 +11,30 @@
 
 
 <br></br>
+
+<div id="progress-bar-container"></div>
+<% if @income.any? %>
+
+
+ <% @income.each do |income| %>
+    <%= income.name %>
+ <% end %>
+ <% else %>No Incomes Added
+
+<% end %>
+
+<% if @expenditure.any? %>
+
+
+ <% @expenditure.each do |expenditure| %>
+    <%= expenditure.name %>
+ <% end %>
+ <% else %>No Expenditures Added
+<% end %>
+
+<a href='/incomes/new'>Add Income</a>
+<a href='/expenditures/new'>Add Expenditure</a>
+
 <h1 style="text-align: center;">Savings vs Goal</h1>
 <div id="main-progress-container" style="border: blue 2px solid; width:70%; margin-right: 90px; margin-left: 150px; margin-bottom: 10 px; padding: 25px">
   <div id="progress-bar-container">

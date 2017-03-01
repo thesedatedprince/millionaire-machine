@@ -6,7 +6,6 @@ class CreateIncomes < ActiveRecord::Migration[5.0]
       t.date :date
       t.boolean :actual
       t.string :frequency
-
       t.timestamps
     end
   end

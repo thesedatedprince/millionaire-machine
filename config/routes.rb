@@ -8,6 +8,12 @@ Rails.application.routes.draw do
   resources :expenditure
   resources :goals
 
+
+  resources :projections
+
   root 'dashboards#index'
+  resources:dashboards
+  resources:incomes
+  resources:expenditures
 
 end
