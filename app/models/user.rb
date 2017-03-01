@@ -6,4 +6,7 @@ class User < ApplicationRecord
   has_many :incomes, dependent: :destroy
   has_many :expenditures, dependent: :destroy
   has_one :goal
+
+
+
 end
