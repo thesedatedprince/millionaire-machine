@@ -1,7 +1,12 @@
 <script src="http://code.highcharts.com/highcharts.js"></script>
 
 <h1 style="text-align: center;">Dashboard</h1>
-
+<% if @goal.any? %>
+   <% @goal.each do |goal| %>
+      <%= goal.name %>
+     <% end %>
+   <% else %>No goals yet
+<% end %>
 <div id="chart-container" style="width:70%; height:400px; padding-left: 12%; padding-top: 5%;"></div>
 
 
