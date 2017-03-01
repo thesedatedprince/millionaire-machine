@@ -1,9 +1,10 @@
-class DashboardsController < ApplicationController
 
+class DashboardsController < ApplicationController
 
   def index
     @income = Income.all
     @expenditure = Expenditure.all
   end
+
 
 end
