@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   resources :projections
 
 
-  # root 'dashboards#index'
   root 'static_pages#home'
 
 end

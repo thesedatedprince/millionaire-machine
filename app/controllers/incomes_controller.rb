@@ -4,8 +4,8 @@ class IncomesController < ApplicationController
 
     @income_data = Income.all
 
-    current_user
-    Income.find(current_user)
+    # current_user
+    # Income.find(current_user)
 
     respond_to do |format|
       format.html
