@@ -26,4 +26,15 @@
 .sign_in_buttons {
   position: relative;
   right:10px;
+  font-size: 20px;
+  margin-top: 10px;
+  color: #616161;
+  list-style-type: none;
+}
+a {
+     color: #616161;
+     border-right-width: 3px;
+     border-right-style: solid;
+     border-right-color: #616161;
+     padding-right: 8px;
 }
