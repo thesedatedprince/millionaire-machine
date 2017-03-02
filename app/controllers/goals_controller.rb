@@ -21,7 +21,7 @@ class GoalsController < ApplicationController
       else
         flash[:notice] = 'Error'
       end
-        redirect_to '/dashboards'
+        redirect_to dashboards_path
     end
 
     def goal_params

@@ -1,4 +1,5 @@
 class ProjectionsController < ApplicationController
+
   def new
     @projection = Projection.new
   end
