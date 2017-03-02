@@ -14,14 +14,15 @@
  *= require_self
  */
  .navbar {
-   list-style-type: none;
-   margin: 0;
-   padding: 0;
-   text-align: right;
-   border-bottom: 20px;
-   border-right: 20px;
-   border-top: 20px;
-  }
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  border-bottom: 20px;
+  border-right: 20px;
+  border-top: 20px;
+ }
+
 
 .sign_in_buttons {
   position: relative;
@@ -31,10 +32,62 @@
   color: #616161;
   list-style-type: none;
 }
+
 a {
-     color: #616161;
-     border-right-width: 3px;
-     border-right-style: solid;
-     border-right-color: #616161;
-     padding-right: 8px;
+    color: #616161;
+    border-right-width: 3px;
+    border-right-style: solid;
+    border-right-color: #616161;
+    padding-right: 8px;
 }
+
+body {
+color: #616161;
+padding-top: 70px;
+font-family: 'Raleway',sans-serif;
+font-size: 30px;
+font-weight: 800;
+line-height: 36px;
+margin: 0 0 24px;
+text-align: center;
+}
+
+h1 {
+  color: #616161;
+  font-family: 'Raleway',sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 36px;
+  margin: 0 0 24px;
+  text-align: center;
+
+}
+
+.footer {
+   font-size: 15px;
+   position: fixed;
+   padding: 1rem;
+   background-color: #efefef;
+   text-align: center;
+   color: #000;
+   height: 35px;
+   left: 0 ;
+   right: 0;
+   bottom: 0;
+ }
+
+ .footer a:hover{
+   cursor: pointer;
+ }
+
+ .user_forms{
+   font-size: 20px;
+ }
+
+ .forgot_password{
+   font-size: 10px
+ }
+
+ .forgot_password a:hover{
+   color: red;
+ }
