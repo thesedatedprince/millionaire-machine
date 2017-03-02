@@ -108,3 +108,14 @@ h1 {
    text-align: left;
    font-size: 15px;
  }
+
+  .charts {
+    position: relative;
+    float: left;
+    width: 100%;
+  }
+
+  .outputs {
+    position: relative;
+    float: left;
+  }

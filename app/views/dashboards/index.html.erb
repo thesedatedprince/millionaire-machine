@@ -1,22 +1,33 @@
 
 <h1 style="text-align: center;">Dashboard</h1>
 
+<div class="charts">
 <div id="chart-container"style="width:40%; height:250px; padding-left: 3%; margin: 2%;"></div>
 <div id="main-progress-container">
   <div id="progress-bar-container">
     <div id="progress-bar">0%</div></div>Progress Bar</div>
-
+</div>
 
 <br></br>
 
-<% if @income.any? %>
-
-
- <% @income.each do |income| %>
-    <%= income.name %>
- <% end %>
- <% else %>No Incomes Added
-<% end %><br /><br />
+<div class="outputs">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+    <% if @income.any? %>
+     <% @income.each do |income| %>
+     <tr>
+       <th> <%= income.name %></th>
+       <th> <%= income.amount %></th>
+       <th> <%= income.date.strftime("%d-%m-%y") %></th>
+     </tr>
+     <% end %>
+     <% else %>No Incomes Added
+    <% end %>
+  </table>
 
 <% if @expenditure.any? %>
  <% @expenditure.each do |expenditure| %>
@@ -31,10 +42,9 @@
      <% end %>
    <% else %>No goals yet
 <% end %>
-
+</div>
 
 <!-- <div id="progress-bar-container"></div> -->
-<h1 style="text-align: center;">Savings vs Goal</h1>
 
   </div>
 </div>
