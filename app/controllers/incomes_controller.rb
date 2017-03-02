@@ -20,6 +20,7 @@ class IncomesController < ApplicationController
   end
 
   def create
+    p params
     Income.create(income_params)
     redirect_to dashboards_path
   end
@@ -27,7 +28,7 @@ class IncomesController < ApplicationController
   private
 
   def income_params
-    params.require(:income).permit(:amount, :name, :date)
+    params.require(:income).permit(:amount, :name, :date, :current_user)
   end
 
 
