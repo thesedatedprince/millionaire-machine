@@ -4,7 +4,7 @@ class IncomesController < ApplicationController
 
   def index
 
-    @income_data = Income.find(current_user.id)
+    @income_data = Income.where(user_id: current_user.id)
 
     respond_to do |format|
       format.html
@@ -18,7 +18,7 @@ class IncomesController < ApplicationController
   end
 
   def create
-    p current_user.incomes.create(income_params)
+    current_user.incomes.create(income_params)
     redirect_to dashboards_path
   end
 

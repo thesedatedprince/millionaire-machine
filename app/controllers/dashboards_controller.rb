@@ -11,20 +11,43 @@ class DashboardsController < ApplicationController
     if no_income_stored
       flash[:notice] = 'No incomes stored'
     else
-      p "in controller"
-      p @income
+      @income
+    end
+
+    @expenditure = @dashboard.get_expenditure
+
+    if no_expenditure_stored
+      flash[:notice] = 'No expenditure stored'
+    else
+      @expenditure
+    end
+
+    @projection = @dashboard.get_projection
+
+    if no_projection_stored
+      flash[:notice] = 'No projection stored'
+    else
+      @projection
     end
 
 
     @goal = Goal.all
-    # @income = Income.all
-    @expenditure = Expenditure.all
+  
+
   end
 
 private
 
   def no_income_stored
     @income == []
+  end
+
+  def no_expenditure_stored
+    @expenditure == []
+  end
+
+  def no_projection_stored
+    @projection == []
   end
 
 end

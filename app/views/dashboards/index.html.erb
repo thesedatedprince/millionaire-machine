@@ -1,35 +1,12 @@
 
 <h1 style="text-align: center;">Dashboard</h1>
-<% if @goal.any? %>
-   <% @goal.each do |goal| %>
-      <%= goal.name %>
-     <% end %>
-   <% else %>No goals yet
-<% end %>
+
 <div id="chart-container" style="width:70%; height:400px; padding-left: 12%; padding-top: 5%;"></div>
 
 
 <br></br>
 
 <div id="progress-bar-container"></div>
-<% if @income.any? %>
-
-
- <% @income.each do |income| %>
-    <%= income.name %>
- <% end %>
- <% else %>No Incomes Added
-
-<% end %>
-
-<% if @expenditure.any? %>
-
-
- <% @expenditure.each do |expenditure| %>
-    <%= expenditure.name %>
- <% end %>
- <% else %>No Expenditures Added
-<% end %>
 
 
 <h1 style="text-align: center;">Savings vs Goal</h1>
@@ -39,3 +16,33 @@
   </div>
 </div>
 <br><br><br>
+
+<% if @income.any? %>
+ <% @income.each do |income| %>
+    <%= income.name %>
+ <% end %>
+ <% else %>No Incomes Added
+
+<% end %>
+
+<% if @expenditure.any? %>
+ <% @expenditure.each do |expenditure| %>
+    <%= expenditure.name %>
+ <% end %>
+ <% else %>No Expenditures Added
+<% end %>
+
+<% if @projection.any? %>
+ <% @projection.each do |projection| %>
+    <%= projection.projected_monthly_income %>
+ <% end %>
+ <% else %>No Projections Added
+
+<% end %>
+
+<% if @goal.any? %>
+   <% @goal.each do |goal| %>
+      <%= goal.name %>
+     <% end %>
+   <% else %>No goals yet
+<% end %>

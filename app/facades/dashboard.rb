@@ -5,8 +5,6 @@ class Dashboard
   end
 
   def get_income
-    p "In model"
-    p Income.where(:user_id => @current_user.id).present?
     if Income.where(:user_id => @current_user.id).present?
       Income.where(user_id: @current_user.id)
     else
@@ -16,13 +14,21 @@ class Dashboard
   end
 
   def get_expenditure
-    @expenditure_data = Expenditure.all
+    if Expenditure.where(:user_id => @current_user.id).present?
+      Expenditure.where(user_id: @current_user.id)
+    else
+      []
+    end
+  end
+
+  def get_projection
+    if Projection.where(:user_id => @current_user.id).present?
+      Projection.where(user_id: @current_user.id)
+    else
+      []
+    end
   end
 
 
-
-  # def income_exists
-  #   p Income.exists?(user_id: @current_user.id)
-  # end
 
 end

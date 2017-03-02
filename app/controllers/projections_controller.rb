@@ -1,11 +1,24 @@
 class ProjectionsController < ApplicationController
 
+  before_action :authenticate_user!
+
+  def index
+
+    @projection_data = Projection.where(user_id: current_user.id)
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @projection_data }
+    end
+
+  end
+
   def new
     @projection = Projection.new
   end
 
   def create
-    Projection.create(projection_params)
+    current_user.projections.create(projection_params)
     redirect_to dashboards_path
   end
 
