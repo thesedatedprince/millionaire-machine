@@ -12,12 +12,12 @@ class ExpendituresController < ApplicationController
   end
 
   def new
-  @expenditure = Expenditure.new
+    @expenditure = Expenditure.new
   end
 
   def create
     Expenditure.create(expenditure_params)
-    redirect_to '/'
+    redirect_to dashboards_path
   end
 
   private

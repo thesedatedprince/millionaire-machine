@@ -4,6 +4,9 @@ class IncomesController < ApplicationController
 
     @income_data = Income.all
 
+    # current_user
+    # Income.find(current_user)
+
     respond_to do |format|
       format.html
       format.json { render json: @income_data }
@@ -11,14 +14,14 @@ class IncomesController < ApplicationController
 
   end
 
-
   def new
+    p current_user
     @income = Income.new
   end
 
   def create
     Income.create(income_params)
-    redirect_to '/'
+    redirect_to dashboards_path
   end
 
   private

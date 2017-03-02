@@ -1,25 +1,25 @@
 (function(exports){
-
 //
-//   function Calculator(){
+// //
+// //   function Calculator(){
+// //
+// //   }
+// //
+// //   Calculator.prototype.calcNetIncome = function(data){
+// //
+// //     var dataArray =  data;
+// //     var incomeData = dataArray[0];
+// //     var expData = dataArray[0];
+// //
+// //     var netIncomeData = []
+// //     for(i=0; i<dataArray.length; i++){
+// //       netIncomeData[i] = dataArray[1]
+// //     }
+// //
+// //
+// //   }
+// //
 //
-//   }
-//
-//   Calculator.prototype.calcNetIncome = function(data){
-//
-//     var dataArray =  data;
-//     var incomeData = dataArray[0];
-//     var expData = dataArray[0];
-//
-//     var netIncomeData = []
-//     for(i=0; i<dataArray.length; i++){
-//       netIncomeData[i] = dataArray[1]
-//     }
-//
-//
-//   }
-//
-
 
 function Income(){
 
@@ -40,7 +40,7 @@ Income.prototype.constructIncomeArray = function(dataObj){
 Income.prototype.getIncomeFromDB = function(){
 
     return $.ajax({
-      url: '/income',
+      url: '/incomes',
       dataType: 'json',
       success: function(data){
         console.log("data loaded")

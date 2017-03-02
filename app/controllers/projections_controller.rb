@@ -5,7 +5,7 @@ class ProjectionsController < ApplicationController
 
   def create
     Projection.create(projection_params)
-    redirect_to '/'
+    redirect_to dashboards_path
   end
 
   private
