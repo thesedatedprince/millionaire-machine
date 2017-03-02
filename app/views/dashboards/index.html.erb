@@ -28,10 +28,20 @@
      <% else %>No Incomes Added
     <% end %>
   </table>
-
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
 <% if @expenditure.any? %>
  <% @expenditure.each do |expenditure| %>
-    <%= expenditure.name %>
+    <tr>
+      <th> <%= expenditure.name %></th>
+      <th> <%= expenditure.amount %></th>
+      <th> <%= expenditure.date.strftime("%d-%m-%y") %></th>
+    </tr>
+
  <% end %>
  <% else %>No Expenditures Added
 <% end %><br /><br />
