@@ -20,14 +20,18 @@
     <% if @income.any? %>
      <% @income.each do |income| %>
      <tr>
-       <th> <%= income.name %></th>
-       <th> <%= income.amount %></th>
-       <th> <%= income.date.strftime("%d-%m-%y") %></th>
+       <td> <%= income.name %></td>
+       <td> <%= income.amount %></td>
+       <td> <%= income.date.strftime("%d-%m-%y") %></td>
      </tr>
      <% end %>
      <% else %>No Incomes Added
     <% end %>
   </table>
+</div>
+
+<div class="table_heading">
+  <u>Expenditures</u>
 </div>
 <div class="expenditures">
   <table BORDER=5 BORDERCOLOR=BLACK>
@@ -39,25 +43,45 @@
 <% if @expenditure.any? %>
  <% @expenditure.each do |expenditure| %>
     <tr>
-      <th> <%= expenditure.name %></th>
-      <th> <%= expenditure.amount %></th>
-      <th> <%= expenditure.date.strftime("%d-%m-%y") %></th>
+      <td> <%= expenditure.name %></td>
+      <td> <%= expenditure.amount %></td>
+      <td> <%= expenditure.date.strftime("%d-%m-%y") %></td>
     </tr>
-
  <% end %>
  <% else %>No Expenditures Added
 <% end %>
+</table>
 </div>
+
+<div class="table_heading">
+  <u>Goals</u>
+</div>
+<div class="goals">
+  <table BORDER=5 BORDERCOLOR=BLACK>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Start Date</th>
+      <th>Target Date</th>
+    </tr>
 <% if @goal.any? %>
    <% @goal.each do |goal| %>
-      <%= goal.name %>
+    <tr>
+      <td><%= goal.name %></td>
+      <td><%= goal.amount %></td>
+      <td><%= goal.start_date%> </td>
+      <td><%= goal.target_date%> </td>
+    </tr>
      <% end %>
    <% else %>No goals yet
 <% end %>
+</table>
 </div>
+
+
 
 <!-- <div id="progress-bar-container"></div> -->
 
-  </div>
-</div>
-<br><br><br>
+  <!-- </div>
+</div> -->
+<!-- <br><br><br> -->

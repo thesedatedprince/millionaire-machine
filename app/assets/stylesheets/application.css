@@ -118,6 +118,10 @@ h1 {
     float: left;
     color: black;
     background-color: silver;
+    font-size: 15px;
+    margin-bottom: 70px;
+    margin-right: 10px;
+    padding-right: 0px;
   }
 
 .table_heading {
@@ -129,7 +133,26 @@ h1 {
 
   .expenditures {
     position: relative;
-    float: right;
+    float: left;
     color: black;
     background-color: silver;
+    font-size: 15px;
+    margin-bottom: 70px;
+    margin-right: 10px;
+    padding-right: 0px;
+  }
+
+  .goals {
+    position: relative;
+    float: left;
+    color: black;
+    background-color: silver;
+    font-size: 15px;
+    margin-bottom: 70px;
+    margin-right: 10px;
+    padding-right: 0px;
+  }
+
+  td {
+    width:100px
   }
