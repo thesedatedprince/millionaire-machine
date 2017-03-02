@@ -113,7 +113,16 @@ h1 {
     width: 100%;
   }
 
-  .outputs {
+  .incomes {
     position: relative;
     float: left;
+    color: black;
+    background-color: white;
+  }
+
+  .expenditures {
+    position: relative;
+    float: right;
+    color: black;
+    background-color: white;
   }

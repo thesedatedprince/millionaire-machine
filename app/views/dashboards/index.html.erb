@@ -10,8 +10,8 @@
 
 <br></br>
 
-<div class="outputs">
-  <table>
+<div class="incomes">
+  <table BORDER=5 BORDERCOLOR=BLACK>
     <tr>
       <th>Name</th>
       <th>Amount</th>
@@ -28,7 +28,9 @@
      <% else %>No Incomes Added
     <% end %>
   </table>
-  <table>
+</div>
+<div class="expenditures">
+  <table BORDER=5 BORDERCOLOR=BLACK>
     <tr>
       <th>Name</th>
       <th>Amount</th>
@@ -44,8 +46,8 @@
 
  <% end %>
  <% else %>No Expenditures Added
-<% end %><br /><br />
-
+<% end %>
+</div>
 <% if @goal.any? %>
    <% @goal.each do |goal| %>
       <%= goal.name %>
