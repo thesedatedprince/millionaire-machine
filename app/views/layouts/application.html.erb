@@ -11,11 +11,14 @@
 
   </head>
   <body>
-    
+
 <div class="user_signed_in">
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="sign_in_buttons">
       <% if user_signed_in? %>
+      <div class="user_welcome">
+        Welcome <%= current_user.email %>
+      </div>
       <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
       <%= link_to "Add Income", new_income_path %>
       <%= link_to "Add Expenditure", new_expenditure_path %>
@@ -27,6 +30,9 @@
       <%= link_to "Sign up", new_user_registration_path %>
 
     <% end %>
+
+
+  </div>
   </div>
 
 </div>
