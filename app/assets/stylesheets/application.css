@@ -49,6 +49,7 @@ font-weight: 800;
 line-height: 20px;
 margin: 24px;
 text-align: center;
+background-color: transparent;
 }
 
 h1 {
@@ -167,4 +168,10 @@ h1 {
 
   .chart-container {
     height: 100px;
+  }
+
+  .home-bg{
+    background-repeat: no-repeat;
+    background: url('money.png') fixed;
+    background-size: cover;
   }
