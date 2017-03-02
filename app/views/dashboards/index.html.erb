@@ -2,55 +2,10 @@
 <h1 style="text-align: center;">Dashboard</h1>
 
 <div class="charts">
-<div id="chart-container"style="width:40%; height:250px; padding-left: 3%; margin: 2%;"></div>
+<div id="chart-container"></div>
 <div id="main-progress-container">
   <div id="progress-bar-container">
     <div id="progress-bar">0%</div></div>Progress Bar</div>
-</div>
-
-<br></br>
-<div class="table_heading"><u>Incomes</u></div>
-<div class="incomes">
-  <table  BORDER=5 BORDERCOLOR=BLACK>
-    <tr>
-      <th>Name</th>
-      <th>Amount</th>
-      <th>Date</th>
-    </tr>
-    <% if @income.any? %>
-     <% @income.each do |income| %>
-     <tr>
-       <td> <%= income.name %></td>
-       <td> <%= income.amount %></td>
-       <td> <%= income.date.strftime("%d-%m-%y") %></td>
-     </tr>
-     <% end %>
-     <% else %>No Incomes Added
-    <% end %>
-  </table>
-</div>
-
-<div class="table_heading">
-  <u>Expenditures</u>
-</div>
-<div class="expenditures">
-  <table BORDER=5 BORDERCOLOR=BLACK>
-    <tr>
-      <th>Name</th>
-      <th>Amount</th>
-      <th>Date</th>
-    </tr>
-<% if @expenditure.any? %>
- <% @expenditure.each do |expenditure| %>
-    <tr>
-      <td> <%= expenditure.name %></td>
-      <td> <%= expenditure.amount %></td>
-      <td> <%= expenditure.date.strftime("%d-%m-%y") %></td>
-    </tr>
- <% end %>
- <% else %>No Expenditures Added
-<% end %>
-</table>
 </div>
 
 <div class="table_heading">
@@ -69,14 +24,64 @@
     <tr>
       <td><%= goal.name %></td>
       <td><%= goal.amount %></td>
-      <td><%= goal.start_date%> </td>
-      <td><%= goal.target_date%> </td>
+      <td><%= goal.start_date.strftime("%d-%m-%y")%> </td>
+      <td><%= goal.target_date.strftime("%d-%m-%y")%> </td>
     </tr>
      <% end %>
    <% else %>No goals yet
 <% end %>
 </table>
 </div>
+
+<div class="income_wrapper">
+  <div class="table_heading"><u>Incomes</u></div>
+  <div class="incomes">
+    <table  BORDER=5 BORDERCOLOR=BLACK>
+      <tr>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Date</th>
+      </tr>
+      <% if @income.any? %>
+       <% @income.each do |income| %>
+       <tr>
+         <td> <%= income.name %></td>
+         <td> <%= income.amount %></td>
+         <td> <%= income.date.strftime("%d-%m-%y") %></td>
+       </tr>
+       <% end %>
+       <% else %>No Incomes Added
+      <% end %>
+    </table>
+  </div>
+</div>
+
+
+<div class="expenditure_wrapper">
+  <div class="table_heading">
+    <u>Expenditures</u>
+  </div>
+  <div class="expenditures">
+    <table BORDER=5 BORDERCOLOR=BLACK>
+      <tr>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Date</th>
+      </tr>
+  <% if @expenditure.any? %>
+   <% @expenditure.each do |expenditure| %>
+      <tr>
+        <td> <%= expenditure.name %></td>
+        <td> <%= expenditure.amount %></td>
+        <td> <%= expenditure.date.strftime("%d-%m-%y") %></td>
+      </tr>
+   <% end %>
+   <% else %>No Expenditures Added
+  <% end %>
+  </table>
+  </div>
+</div>
+
 
 
 

@@ -111,35 +111,39 @@ h1 {
     position: relative;
     float: left;
     width: 100%;
+    padding-right: 20px;
   }
 
   .incomes {
-    position: relative;
-    float: left;
     color: black;
     background-color: silver;
     font-size: 15px;
     margin-bottom: 70px;
     margin-right: 10px;
     padding-right: 0px;
+  }
+
+  .income_wrapper{
+    float: left;
   }
 
 .table_heading {
   position: relative;
   text-align: left;
   color: black;
-  border-bottom: 10px;
 }
 
   .expenditures {
-    position: relative;
-    float: left;
     color: black;
     background-color: silver;
     font-size: 15px;
     margin-bottom: 70px;
     margin-right: 10px;
     padding-right: 0px;
+  }
+
+  .expenditure_wrapper{
+    float: right;
   }
 
   .goals {
@@ -153,6 +157,14 @@ h1 {
     padding-right: 0px;
   }
 
+  .goals td{
+    width: 315px;
+  }
+
   td {
-    width:100px
+    width:180px;
+  }
+
+  .chart-container {
+    height: 100px;
   }
