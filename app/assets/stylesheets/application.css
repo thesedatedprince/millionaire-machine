@@ -97,4 +97,14 @@ h1 {
    color: #a71c0b;
    font-size: 15px;
    margin-top: 2px;
+   line-height: 30px;
+ }
+
+ input{
+   line-height: 20px;
+ }
+
+ .alert-success {
+   text-align: left;
+   font-size: 15px;
  }
