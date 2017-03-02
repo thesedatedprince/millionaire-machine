@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   # root 'application#hello'
 
   resources :dashboards
-  resources :income
-  resources :expenditure
+  resources :incomes
+  resources :expenditures
   resources :goals
   resources :projections
 
