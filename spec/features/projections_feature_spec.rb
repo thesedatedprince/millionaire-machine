@@ -23,6 +23,24 @@ feature 'projections' do
       click_button 'Create Projection'
       expect(page.current_path).to eq '/dashboards'
     end
+
+    scenario 'user should not be able to add a second projection' do
+
+      click_link 'Add Projection'
+      expect(page.current_path).to eq '/projections/new'
+      fill_in 'Projected monthly income', with: '100'
+      fill_in 'Projected monthly expenditure', with: '50'
+      fill_in 'Start date', with: '16/02/2017'
+      click_button 'Create Projection'
+
+      click_link 'Add Projection'
+      expect(page.current_path).to eq '/projections/new'
+      fill_in 'Projected monthly income', with: '150'
+      fill_in 'Projected monthly expenditure', with: '50'
+      fill_in 'Start date', with: '16/02/2017'
+      click_button 'Create Projection'
+      expect(page).to have_content "Only permitted to store one projection"
+    end
   end
 
   context 'not signed in' do

@@ -1,8 +1,10 @@
 class ExpendituresController < ApplicationController
 
+  before_action :authenticate_user!
+
   def index
 
-    @expenditure_data = Expenditure.all
+    @expenditure_data = Expenditure.where(user_id: current_user.id)
 
     respond_to do |format|
       format.html
@@ -16,7 +18,7 @@ class ExpendituresController < ApplicationController
   end
 
   def create
-    Expenditure.create(expenditure_params)
+    current_user.expenditures.create(expenditure_params)
     redirect_to dashboards_path
   end
 
