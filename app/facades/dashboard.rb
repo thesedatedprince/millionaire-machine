@@ -29,6 +29,14 @@ class Dashboard
     end
   end
 
+  def get_goal
+    if Goal.where(:user_id => @current_user.id).present?
+      Goal.where(user_id: @current_user.id)
+    else
+      []
+    end
+  end
+
 
 
 end

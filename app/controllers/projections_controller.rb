@@ -18,7 +18,11 @@ class ProjectionsController < ApplicationController
   end
 
   def create
-    current_user.projections.create(projection_params)
+    if !(Projection.where(:user_id => current_user.id).present?)
+      current_user.projections.create(projection_params)
+    else
+      flash[:alert] = 'Only permitted to store one projection'
+    end
     redirect_to dashboards_path
   end
 

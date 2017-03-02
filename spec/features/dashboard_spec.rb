@@ -137,6 +137,54 @@ feature 'Dashboard' do
   end
 
 
+  scenario 'user can only see his goal (and not that of others) on the dashboard when logged in' do
+
+    # user 1 sign_up
+    visit '/'
+    click_link 'Sign up'
+    fill_in 'Email', with: "test@test.com"
+    fill_in 'Password', with: "password"
+    fill_in 'Password confirmation', with: "password"
+    click_button 'Sign up'
+
+    #user 1 adds goal
+
+    click_link 'Add Goal'
+    fill_in 'Amount', with: '100'
+    fill_in 'Name', with: 'Skateboard'
+    fill_in 'Start date', with: '28-02-2017'
+    fill_in 'Target date', with: '28-02-2018'
+    click_button 'Submit goal'
+
+
+    #user 1 signs out
+    click_link 'Sign out'
+
+    #user 2 signs up
+    visit '/'
+    click_link 'Sign up'
+    fill_in 'Email', with: "test2@test.com"
+    fill_in 'Password', with: "password"
+    fill_in 'Password confirmation', with: "password"
+    click_button 'Sign up'
+
+    #user 2 adds goal
+    click_link 'Add Goal'
+    fill_in 'Amount', with: '100'
+    fill_in 'Name', with: 'Rollerskates'
+    fill_in 'Start date', with: '28-02-2017'
+    fill_in 'Target date', with: '28-02-2018'
+    click_button 'Submit goal'
+
+    expect(page).to have_content ("Dashboard")
+    expect(current_path).to eq dashboards_path
+    expect(page).to_not have_content ('Skateboard')
+    expect(page).to have_content ('Rollerskates')
+
+
+  end
+
+
   scenario 'user cannot see his dashboard when not logged in' do
     visit '/'
     expect(page).to_not have_content ("Dashboard")

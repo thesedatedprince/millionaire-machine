@@ -6,9 +6,9 @@ class DashboardsController < ApplicationController
   def index
     @dashboard = Dashboard.new(current_user)
 
-    p @income = @dashboard.get_income
+    @income = @dashboard.get_income
 
-    if no_income_stored
+    if no_record_stored(@income)
       flash[:notice] = 'No incomes stored'
     else
       @income
@@ -16,7 +16,7 @@ class DashboardsController < ApplicationController
 
     @expenditure = @dashboard.get_expenditure
 
-    if no_expenditure_stored
+    if no_record_stored(@expenditure)
       flash[:notice] = 'No expenditure stored'
     else
       @expenditure
@@ -24,30 +24,26 @@ class DashboardsController < ApplicationController
 
     @projection = @dashboard.get_projection
 
-    if no_projection_stored
+    if no_record_stored(@projection)
       flash[:notice] = 'No projection stored'
     else
       @projection
     end
 
+    @goal = @dashboard.get_goal
 
-    @goal = Goal.all
-  
+    if no_record_stored(@goal)
+      flash[:notice] = 'No goal stored'
+    else
+      @goal
+    end
 
   end
 
 private
 
-  def no_income_stored
-    @income == []
-  end
-
-  def no_expenditure_stored
-    @expenditure == []
-  end
-
-  def no_projection_stored
-    @projection == []
+  def no_record_stored(record)
+    record == []
   end
 
 end
