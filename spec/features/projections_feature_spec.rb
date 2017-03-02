@@ -21,7 +21,7 @@ feature 'projections' do
       fill_in 'Projected monthly expenditure', with: '50'
       fill_in 'Start date', with: '16/02/2017'
       click_button 'Create Projection'
-      expect(page.current_path).to eq '/'
+      expect(page.current_path).to eq '/dashboards'
     end
   end
 

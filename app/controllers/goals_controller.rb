@@ -1,6 +1,15 @@
 class GoalsController < ApplicationController
 
+    def index
 
+      @goal_data = Goal.all
+
+      respond_to do |format|
+        format.html
+        format.json { render json: @goal_data }
+      end
+
+    end
 
     def new
       @goal = Goal.new

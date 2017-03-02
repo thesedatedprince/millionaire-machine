@@ -20,7 +20,7 @@ Expenditure.prototype.constructExpendArray = function(dataObj){
 Expenditure.prototype.getExpenditureFromDB = function(){
 
     return $.ajax({
-      url: '/expenditure',
+      url: '/expenditures',
       dataType: 'json',
       success: function(data){
         console.log("data loaded")

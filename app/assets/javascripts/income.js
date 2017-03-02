@@ -40,7 +40,7 @@ Income.prototype.constructIncomeArray = function(dataObj){
 Income.prototype.getIncomeFromDB = function(){
 
     return $.ajax({
-      url: '/income',
+      url: '/incomes',
       dataType: 'json',
       success: function(data){
         console.log("data loaded")
