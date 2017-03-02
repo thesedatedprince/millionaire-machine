@@ -9,4 +9,13 @@ describe Income, type: :model do
   expect (Income.last.amount == 100)
   #it { is_expected.to validate_presence_of :amount}
   end
-end
+
+  it "creates income with user id" do
+  user = User.create(email: "test@test.com", password: "testtest", password_confirmation: "testtest")
+  income = Income.create(amount: 100, name: "Salary", user_id: user.id)
+  expect(income.user_id).to eq user.id
+  end
+
+  it { should validate_numericality_of(:amount) }
+  it { should validate_presence_of(:user_id)}
+  end

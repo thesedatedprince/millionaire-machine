@@ -3,9 +3,10 @@
 #
 # Examples:
 # User.create(email: "user1@user.com", password: 'JDjLfuQJZAkduSfP1Q7MwO1JUfOVHK26JVJ4q68zdM9EHbfWD6jr2')
-user = User.create! :email => 'john@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+user = User.create! :email => 'helen@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret'
 
-  goal = Goal.create([{amount: 1000, name: 'Nepalese Trek', start_date: '01/01/2017', target_date: '01/12/2017', user_id: 1}])
+  goals = Goal.create([{amount: 1000, name: 'Nepalese Trek', start_date: '01/01/2017', target_date: '01/12/2017', user_id: 1},
+    {amount: 200, name: 'Coure', start_date: '01/03/2017', target_date: '01/08/2017', user_id: 1}])
 
 
 incomes = Income.create([{ amount: 100, name:'aaaa', date: '01/01/2017', user_id: 1 },
@@ -34,3 +35,6 @@ incomes = Income.create([{ amount: 100, name:'aaaa', date: '01/01/2017', user_id
      {amount: 130, name: 'kkkk', date: '31/10/2017', user_id: 1},
      {amount: 90, name: 'llll', date: '30/11/2017', user_id: 1},
      {amount: 105, name: 'xxxx', date: '31/12/2017', user_id: 1}])
+
+  projections = Projection.create([{projected_monthly_income: 150, projected_monthly_expenditure:130, start_date:28/02/2017,user_id: 1 },
+      {projected_monthly_income: 250, projected_monthly_expenditure:180, start_date:28/04/2017,user_id: 1 }])
