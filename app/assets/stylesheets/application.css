@@ -117,12 +117,19 @@ h1 {
     position: relative;
     float: left;
     color: black;
-    background-color: white;
+    background-color: silver;
   }
+
+.table_heading {
+  position: relative;
+  text-align: left;
+  color: black;
+  border-bottom: 10px;
+}
 
   .expenditures {
     position: relative;
     float: right;
     color: black;
-    background-color: white;
+    background-color: silver;
   }
