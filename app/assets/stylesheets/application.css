@@ -27,3 +27,20 @@
   position: relative;
   right:10px;
 }
+
+.footer {
+   font-size: 15px;
+   position: fixed;
+   padding: 1rem;
+   background-color: #efefef;
+   text-align: center;
+   color: #000;
+   height: 35px;
+   left: 0 ;
+   right: 0;
+   bottom: 0;
+ }
+
+ .footer a:hover{
+   cursor: pointer;
+ }
