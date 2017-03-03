@@ -43,6 +43,38 @@ feature 'projections' do
     end
   end
 
+  context 'User Cannot leave fields blank' do
+    scenario 'User cannot leave Projected monthly income field blank' do
+      sign_up
+      click_link 'Add Projection'
+      fill_in 'Projected monthly income', with: ''
+      fill_in 'Projected monthly expenditure', with: '50'
+      fill_in 'Start date', with: '16/02/2017'
+      click_button 'Create Projection'
+      expect(page).to_not have_content '16-02-2017'
+      expect(current_path).to eq '/dashboards'
+  end
+  scenario 'User cannot leave Projected monthly expenditure field blank' do
+    sign_up
+    click_link 'Add Projection'
+    fill_in 'Projected monthly income', with: '150'
+    fill_in 'Projected monthly expenditure', with: ''
+    fill_in 'Start date', with: '16/02/2017'
+    click_button 'Create Projection'
+    expect(page).to_not have_content '16-02-2017'
+    expect(current_path).to eq '/dashboards'
+end
+scenario 'User cannot leave Start date field blank' do
+  sign_up
+  click_link 'Add Projection'
+  fill_in 'Projected monthly income', with: '150'
+  fill_in 'Projected monthly expenditure', with: '50'
+  fill_in 'Start date', with: ''
+  click_button 'Create Projection'
+  expect(page).to_not have_content '150'
+  expect(current_path).to eq '/dashboards'
+  end
+end
   context 'not signed in' do
     scenario 'user looks for add projection button' do
       visit '/'
