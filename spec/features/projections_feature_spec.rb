@@ -49,7 +49,6 @@ feature 'projections' do
       click_link 'Add Projection'
       fill_in 'Projected monthly income', with: ''
       fill_in 'Projected monthly expenditure', with: '50'
-      fill_in 'Start date', with: '16/02/2017'
       click_button 'Create Projection'
       expect(page).to_not have_content '16-02-2017'
       expect(current_path).to eq '/dashboards'
