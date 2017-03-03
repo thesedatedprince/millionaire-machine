@@ -4,12 +4,33 @@ function Projection(){
 
 }
 
-Projection.prototype.constructDateArray = function(startDate){
+Projection.prototype.constructProjectedItemDataArray = function(projFigure, projDates){
 
-  var d = startDate;
+  var output = [];
+
+  for (i=0; i< 12; i++){
+    output.push([projDates[i],projFigure]);
+  }
+  return output;
+}
+
+Projection.prototype.constructProjectedNetIncomeArray = function(projNetIncome, projDates){
+
+  var output = [];
+
+  for (i=0; i< 12; i++){
+    output.push([projDates[i],projNetIncome]);
+  }
+  return output;
+
+}
+
+Projection.prototype.constructDateArray = function(startDate, months){
+
+  var d = new Date(startDate);
   var dateArray = [];
 
-  for (i = 0; i < 12; i++){
+  for (i = 0; i < months; i++){
     d.setMonth(d.getMonth() + 1);
     dateArray.push(d.getDate() + "-" + (d.getMonth() + 1) + '-' + d.getFullYear())
   }

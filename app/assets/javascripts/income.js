@@ -1,25 +1,5 @@
 (function(exports){
-//
-// //
-// //   function Calculator(){
-// //
-// //   }
-// //
-// //   Calculator.prototype.calcNetIncome = function(data){
-// //
-// //     var dataArray =  data;
-// //     var incomeData = dataArray[0];
-// //     var expData = dataArray[0];
-// //
-// //     var netIncomeData = []
-// //     for(i=0; i<dataArray.length; i++){
-// //       netIncomeData[i] = dataArray[1]
-// //     }
-// //
-// //
-// //   }
-// //
-//
+
 
 function Income(){
 
@@ -27,14 +7,26 @@ function Income(){
 
 Income.prototype.constructIncomeArray = function(dataObj){
 
-  var incomeDataArray = [];
+  var output = [];
 
   for (i=0; i < dataObj.length; ++i){
     var dataPoint = [dataObj[i].date, dataObj[i].amount];
-    incomeDataArray.push(dataPoint);
+    output.push(dataPoint);
   }
 
-  return incomeDataArray
+  return output
+}
+
+Income.prototype.getPureIncomeArray = function(dataObj){
+
+  var output = [];
+
+  for (i=0; i < dataObj.length; ++i){
+    output.push(dataObj[i].amount);
+  }
+  
+  return output
+
 }
 
 Income.prototype.getIncomeFromDB = function(){

@@ -1,6 +1,6 @@
 
 
-function getChart(chartData){
+function getChart(actualIE, projIE, projNI){
 
   Highcharts.setOptions({
         chart: {
@@ -35,12 +35,21 @@ function getChart(chartData){
       },
       series: [{
           name: 'Actual Income',
-          data: chartData[0],
+          data: actualIE[0],
           color: '#00FF00'
       }, {
           name: 'Actual Expenditure',
-          data: chartData[1],
+          data: actualIE[1],
           color: '#FF00FF'
+      }, {
+          name: 'Projected Income',
+          data: projIE[0]
+      },{
+          name: 'Projected Expenditure',
+          data: projIE[1]
+      },{
+          name: 'Projected Net Income',
+          data: projNI[0]
       }]
   });
 
