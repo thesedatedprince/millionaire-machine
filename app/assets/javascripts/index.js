@@ -20,51 +20,65 @@ $(document).ready(function () {
 
       //prepare the actual income/expend data for the charts
       //these are the data series for actuals
-      var incomeDataArray = income.constructIncomeArray(incomeData[0]);
-      var expDataArray = expenditure.constructExpendArray(expData[0]);
+      // var incomeDataArray = income.constructIncomeArray(incomeData[0]);
+      // var expDataArray = expenditure.constructExpendArray(expData[0]);
+      //
 
-      //these are the pure income/exp data to calc running balances
-      var pureIncomeArray = income.getPureIncomeArray(incomeData[0]);
-      var pureExpArray = expenditure.getPureExpArray(expData[0]);
-      //console.log(pureIncomeArray);
-      //console.log(pureExpArray);
+      //
+      // //these are the pure income/exp data to calc running balances
+      // var pureIncomeArray = income.getPureIncomeArray(incomeData[0]);
+      // var pureExpArray = expenditure.getPureExpArray(expData[0]);
+
 
       //prepare the projected monthly income/expend data for the charts
-      var jsonIEObj = JSON.parse(JSON.stringify(projData[0]));
-      console.log(jsonIEObj);
-      var projMonthlyIncome = jsonIEObj[0].projected_monthly_income;
-      var projMonthlyExpend = jsonIEObj[0].projected_monthly_expenditure;
-      var projNetIncome = (projMonthlyIncome - projMonthlyExpend);
-      var projStartDate = jsonIEObj[0].start_date;
+      // var jsonIEObj = JSON.parse(JSON.stringify(projData[0]));
+      // console.log(jsonIEObj);
+      // var projMonthlyIncome = jsonIEObj[0].projected_monthly_income;
+      // var projMonthlyExpend = jsonIEObj[0].projected_monthly_expenditure;
+      // var projNetIncome = (projMonthlyIncome - projMonthlyExpend);
+      // console.log(projNetIncome);
+      // var projStartDate = jsonIEObj[0].start_date;
+
+        // ///article.brand = (result[0] !== undefined) ? result[0].name : null; to clean up the erroring
 
       //prepare the goal data for the charts
-      var jsonGoalObj = JSON.parse(JSON.stringify(goalData[0]));
-      var goalAmount = jsonGoalObj[0].amount;
-      var goalStartDate = jsonGoalObj[0].start_date;
-      var goalTargetDate = jsonGoalObj[0].target_date;
+      //console.log(jsonGoalObj);
+      // console.log(goalData[0]);
+      //
+      // var jsonGoalObj = JSON.parse(JSON.stringify(goalData[0]));
+      // var goalAmount = (jsonGoalObj !== undefined) ? jsonGoalObj[0].amount : null;
+      // //var goalAmount = jsonGoalObj[0].amount;
+      // var goalStartDate = jsonGoalObj[0].start_date;
+      // var goalTargetDate = jsonGoalObj[0].target_date;
 
-      //generate the projected dates for the charts
-      var numMonthsToProject = 12;
-      var projectedDateArray = projection.constructDateArray(projStartDate,numMonthsToProject);
-
-      //constuct the projected data points
-      var projIncomeDataArray = projection.constructProjectedItemDataArray(projMonthlyIncome,projectedDateArray);
-      var projExpendDataArray = projection.constructProjectedItemDataArray(projMonthlyExpend,projectedDateArray);
-      var projNetIncomeDataArray = projection.constructProjectedNetIncomeArray(projNetIncome,projectedDateArray);
+      // //generate the projected dates for the charts
+      // var numMonthsToProject = 12;
+      // var projectedDateArray = projection.constructDateArray(projStartDate,numMonthsToProject);
+      //
+      // //constuct the projected data points
+      // var projIncomeDataArray = projection.constructProjectedItemDataArray(projMonthlyIncome,projectedDateArray);
+      // var projExpendDataArray = projection.constructProjectedItemDataArray(projMonthlyExpend,projectedDateArray);
+      // var projNetIncomeDataArray = projection.constructProjectedNetIncomeArray(projNetIncome,projectedDateArray);
+      // console.log(projNetIncomeDataArray);
 
 
       //the actual and projected data points for the graphs
-      var chartDataActuals = [incomeDataArray,expDataArray];
-      var chartDataProjected = [projIncomeDataArray,projExpendDataArray]
+      // var chartDataActuals = [incomeDataArray,expDataArray];
+      // var chartDataProjected = [projIncomeDataArray,projExpendDataArray]
 
       //get the chart and populate with the above data series
-      getChart(chartDataActuals,chartDataProjected,projNetIncomeDataArray);
+      //getBarChart(chartDataActuals,chartDataProjected,projNetIncomeDataArray);
+      getProjectedBarChart();
+      //getActualBarChart();
 
-      //prepare the data for the goal progress bar
-      var runningBalance = calculator.calcNetIncome(pureIncomeArray,pureExpArray);
-      var percentOfGoal = (runningBalance/goalAmount)*100;
+      //prepare the data for the goal progress bar/pie chart
+      // var runningBalance = calculator.calcNetIncome(pureIncomeArray,pureExpArray);
+      // var shortFall = goalAmount - runningBalance;
+      // var percentOfGoal = (runningBalance/goalAmount)*100;
+      //
+      // moveProgressBar(percentOfGoal);
 
-      moveProgressBar(percentOfGoal);
+      getPieChart(100,50);
 
     });
 
