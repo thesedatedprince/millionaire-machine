@@ -17,10 +17,16 @@ feature 'goals' do
       click_link 'Add Goal'
       fill_in('Amount', with: 1500)
       fill_in('Name', with: 'ski trip')
-      fill_in('Start date', with: '16/02/2017')
-      fill_in('Target date', with: '16/02/2017')
+      fill_in('Start date', with: '12/07/2017')
+      fill_in('Target date', with: '14/07/2017')
       click_button('Submit goal')
+
+      expect(page).to have_content '1500'
       expect(page).to have_content 'ski trip'
+      expect(page).to have_content '12-07-17'
+      expect(page).to have_content '14-07-17'
+
+
       expect(page).not_to have_content 'No goals yet'
     end
 
@@ -32,17 +38,21 @@ feature 'goals' do
       click_link 'Add Goal'
       fill_in('Amount', with: 1500)
       fill_in('Name', with: 'ski trip')
-      fill_in('Start date', with: '16/02/2017')
-      fill_in('Target date', with: '16/02/2017')
+      fill_in('Start date', with: '12/07/2017')
+      fill_in('Target date', with: '14/07/2017')
       click_button('Submit goal')
       click_link 'Add Goal'
-      fill_in('Amount', with: 1500)
+      fill_in('Amount', with: 1400)
       fill_in('Name', with: 'vespa')
-      fill_in('Start date', with: '16/02/2017')
-      fill_in('Target date', with: '16/02/2017')
+      fill_in('Start date', with: '15/07/2017')
+      fill_in('Target date', with: '17/07/2017')
       click_button('Submit goal')
       expect(page).to have_content "Only permitted to store one goal"
       expect(page).not_to have_content 'vespa'
+      expect(page).not_to have_content '1400'
+      expect(page).not_to have_content '15/07/2017'
+      expect(page).not_to have_content '17/07/2017'
+
     end
   end
 
