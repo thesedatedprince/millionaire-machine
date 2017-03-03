@@ -39,12 +39,13 @@ I want it to have a visually pleasing layout.
 Site Map
 --------
 Inline-style:
-![SiteMap]https://github.com/thesedatedprince/millionaire-machine/blob/master/Sitemap.png
+![SiteMap](https://github.com/thesedatedprince/millionaire-machine/blob/master/Sitemap.png)
 
 Wireframes
 ----------
 Inline-style:
-![Userscreens]https://github.com/thesedatedprince/millionaire-machine/blob/master/Userscreens.png
+![Userscreens](https://github.com/thesedatedprince/millionaire-machine/blob/master/Userscreens.png)
+
 Database set up for development environments
 --------------------------------------------
 
@@ -52,7 +53,7 @@ Millionaire-machine has a PostgreSQL database.
 
 On each new pull from master, if there are DB changes it is recommended that you run
 ```bin/rake db:setup``` on the first install (creates, runs migrations)
-```bin/rake db:reset`` thereafter (drops and runs set up)
+```bin/rake db:reset``` thereafter (drops and runs set up)
 
 These commands handle required drop, schema creation or updates.
-Run bin/rake db:seed with data required listed in db/seeds.rb.
+Run ```bin/rake db:seed``` with data required listed in db/seeds.rb.
