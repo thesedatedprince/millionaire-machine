@@ -6,9 +6,7 @@
 <div class="charts">
 <div id="proj-chart-container"></div>
 <div id="actual-chart-container"></div>
-<div id="main-progress-container">
-  <div id="progress-bar-container">
-    <div id="progress-bar">0%</div></div>Progress Bar</div>
+<div id="piechart-container" style="height: 400px"></div>
 </div>
 
 <div class="table_heading">
@@ -21,7 +19,6 @@
       <th>Amount</th>
       <th>Start Date</th>
       <th>Target Date</th>
-      <th>Date</th>
     </tr>
 <% if @goal.any? %>
    <% @goal.each do |goal| %>
@@ -62,7 +59,7 @@
 </div>
 
 
-<div id="piechart-container" style="height: 400px"></div>
+
 
 
 <div class="expenditure_wrapper">
@@ -91,11 +88,13 @@
 </div>
 
 
-
+<div class='projection_wrapper'>
 <% if @projection.any? %>
  <% @projection.each do |projection| %>
     <%= projection.projected_monthly_income %>
  <% end %>
+
  <% else %>No Projections Added
 
 <% end %>
+</div>

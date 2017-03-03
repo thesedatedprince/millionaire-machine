@@ -175,3 +175,9 @@ h1 {
     background: url('money.png') fixed;
     background-size: cover;
   }
+  .projection_wrapper{
+    position: relative;
+    float: left;
+    width: 100%;
+    margin-bottom: 140px;
+  }

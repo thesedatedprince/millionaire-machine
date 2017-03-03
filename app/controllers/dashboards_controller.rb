@@ -11,7 +11,7 @@ class DashboardsController < ApplicationController
     if no_record_stored(@income)
       flash[:notice] = 'No incomes stored'
     else
-      p @income
+      @income
     end
 
     @expenditure = @dashboard.get_expenditure
