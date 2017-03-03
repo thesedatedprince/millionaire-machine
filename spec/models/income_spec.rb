@@ -17,5 +17,5 @@ describe Income, type: :model do
   end
 
   it { should validate_numericality_of(:amount) }
-  it { should validate_presence_of(:user_id)}
+  it { should validate_presence_of(:amount)}
   end
