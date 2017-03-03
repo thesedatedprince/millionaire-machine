@@ -43,13 +43,13 @@ $(document).ready(function () {
 
       //prepare the goal data for the charts
       //console.log(jsonGoalObj);
-      console.log(goalData[0]);
-
-      var jsonGoalObj = JSON.parse(JSON.stringify(goalData[0]));
-      var goalAmount = (jsonGoalObj !== undefined) ? jsonGoalObj[0].amount : null;
-      //var goalAmount = jsonGoalObj[0].amount;
-      var goalStartDate = jsonGoalObj[0].start_date;
-      var goalTargetDate = jsonGoalObj[0].target_date;
+      // console.log(goalData[0]);
+      //
+      // var jsonGoalObj = JSON.parse(JSON.stringify(goalData[0]));
+      // var goalAmount = (jsonGoalObj !== undefined) ? jsonGoalObj[0].amount : null;
+      // //var goalAmount = jsonGoalObj[0].amount;
+      // var goalStartDate = jsonGoalObj[0].start_date;
+      // var goalTargetDate = jsonGoalObj[0].target_date;
 
       // //generate the projected dates for the charts
       // var numMonthsToProject = 12;
@@ -68,15 +68,17 @@ $(document).ready(function () {
 
       //get the chart and populate with the above data series
       //getBarChart(chartDataActuals,chartDataProjected,projNetIncomeDataArray);
+      getProjectedBarChart();
+      //getActualBarChart();
 
       //prepare the data for the goal progress bar/pie chart
-      var runningBalance = calculator.calcNetIncome(pureIncomeArray,pureExpArray);
-      var shortFall = goalAmount - runningBalance;
-      var percentOfGoal = (runningBalance/goalAmount)*100;
+      // var runningBalance = calculator.calcNetIncome(pureIncomeArray,pureExpArray);
+      // var shortFall = goalAmount - runningBalance;
+      // var percentOfGoal = (runningBalance/goalAmount)*100;
+      //
+      // moveProgressBar(percentOfGoal);
 
-      moveProgressBar(percentOfGoal);
-
-      getPieChart(goalAmount,shortFall);
+      getPieChart(100,50);
 
     });
 

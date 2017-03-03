@@ -1,6 +1,6 @@
 
 
-function getBarChart(actualIE, projIE, projNI){
+function getProjectedBarChart(){
 
   Highcharts.setOptions({
         chart: {
@@ -18,16 +18,16 @@ function getBarChart(actualIE, projIE, projNI){
         }
     });
 
-    var myChart = Highcharts.chart('chart-container', {
+    var myChart = Highcharts.chart('proj-chart-container', {
     title: {
-        text: 'Combination chart'
+        text: 'Projected Income and Expenditure'
     },
     xAxis: {
-        categories: []
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
     },
     labels: {
         items: [{
-            html: 'Total fruit consumption',
+            html: '',
             style: {
                 left: '50px',
                 top: '18px',
@@ -38,44 +38,24 @@ function getBarChart(actualIE, projIE, projNI){
     series: [{
         type: 'column',
         name: 'Income (proj)',
-        data: projIE[0],
+        data: [1000,1256,1500,1355,1755,1500,1500,1500,1654,678,765],
     }, {
         type: 'column',
         name: 'Expenditure (proj)',
-        data:  projIE[1]
+        data:  [1000,1256,1500,1355,1755,1500,1500,1500,1654,678,765],
     }, {
         type: 'spline',
         name: 'Net Income (proj)',
-        data: projNI[0],
+        data: [1000,1256,1500,1355,1755,1500,1500,1500,1654,678,765],
         marker: {
             lineWidth: 2,
             lineColor: Highcharts.getOptions().colors[3],
             fillColor: 'white'
         }
-    }, {
-        type: 'pie',
-        name: 'Total consumption',
-        data: [{
-            name: 'Jane',
-            y: 0,
-            color: Highcharts.getOptions().colors[0] // Jane's color
-        }, {
-            name: 'John',
-            y: 23,
-            color: Highcharts.getOptions().colors[1] // John's color
-        }, {
-            name: 'Joe',
-            y: 19,
-            color: Highcharts.getOptions().colors[2] // Joe's color
-        }],
-        center: [100, 80],
-        size: 100,
-        showInLegend: false,
-        dataLabels: {
-            enabled: false
-        }
     }]
 });
+
+
 
   // var myChart = Highcharts.chart('chart-container', {
   //     chart: {
