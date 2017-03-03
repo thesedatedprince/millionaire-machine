@@ -38,15 +38,15 @@ function getProjectedBarChart(){
     series: [{
         type: 'column',
         name: 'Income (proj)',
-        data: [1000,1256,1500,1355,1755,1500,1500,1500,1654,678,765],
+        data: [1000,1250,1500,1350,1750,1500,1500,1500,1650,700,800],
     }, {
         type: 'column',
         name: 'Expenditure (proj)',
-        data:  [1000,1256,1500,1355,1755,1500,1500,1500,1654,678,765],
+        data:  [800,700,1400,1200,1300,1500,1100,600,1000,500,750],
     }, {
         type: 'spline',
         name: 'Net Income (proj)',
-        data: [1000,1256,1500,1355,1755,1500,1500,1500,1654,678,765],
+        data: [200,550,100,150,450,0,400,900,650,200,50],
         marker: {
             lineWidth: 2,
             lineColor: Highcharts.getOptions().colors[3],
