@@ -1,6 +1,8 @@
 
 <h1 style="text-align: center;">Dashboard</h1>
 
+<div id="chart-container"></div>
+
 <div class="charts">
 <div id="chart-container"></div>
 <div id="main-progress-container">
@@ -18,6 +20,7 @@
       <th>Amount</th>
       <th>Start Date</th>
       <th>Target Date</th>
+      <th>Date</th>
     </tr>
 <% if @goal.any? %>
    <% @goal.each do |goal| %>
@@ -32,6 +35,7 @@
 <% end %>
 </table>
 </div>
+
 
 <div class="income_wrapper">
   <div class="table_heading"><u>Incomes</u></div>
@@ -84,9 +88,10 @@
 
 
 
+<% if @projection.any? %>
+ <% @projection.each do |projection| %>
+    <%= projection.projected_monthly_income %>
+ <% end %>
+ <% else %>No Projections Added
 
-<!-- <div id="progress-bar-container"></div> -->
-
-  <!-- </div>
-</div> -->
-<!-- <br><br><br> -->
+<% end %>

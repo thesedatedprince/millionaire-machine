@@ -35,20 +35,9 @@ feature 'goals' do
       fill_in('Amount', with: 1500)
       fill_in('Name', with: 'vespa')
       click_button('Submit goal')
-      expect(page).to have_content 'Error'
+      expect(page).to have_content "Only permitted to store one goal"
       expect(page).not_to have_content 'vespa'
     end
   end
 
-    xscenario 'user should be able to update a goal' do
-      sign_up
-      visit '/dashboards'
-      click_link 'Add Goal'
-      fill_in('Amount', with: 1500)
-      fill_in('Name', with: 'vespa')
-      click_button('Submit goal')
-      click_link('Update goal')
-      expect(page).to have_content 'Error'
-      expect(page).not_to have_content 'vespa'
-    end
 end
