@@ -3,7 +3,7 @@
 #
 # Examples:
 # User.create(email: "user1@user.com", password: 'JDjLfuQJZAkduSfP1Q7MwO1JUfOVHK26JVJ4q68zdM9EHbfWD6jr2')
-user = User.create! :email => 'helen@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret'
+user = User.create! :email => 'john@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret'
 
   goals = Goal.create([{amount: 1000, name: 'Nepalese Trek', start_date: '01/01/2017', target_date: '01/12/2017', user_id: 1},
     {amount: 200, name: 'Coure', start_date: '01/03/2017', target_date: '01/08/2017', user_id: 1}])

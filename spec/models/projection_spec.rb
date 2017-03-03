@@ -4,5 +4,4 @@ require 'rails_helper'
 
   it { should validate_presence_of(:user_id)}
   it { is_expected.to belong_to(:user)}
-  it { should validate_numericality_of(:amount) }
   end
