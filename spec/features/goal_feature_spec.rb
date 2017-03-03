@@ -17,6 +17,8 @@ feature 'goals' do
       click_link 'Add Goal'
       fill_in('Amount', with: 1500)
       fill_in('Name', with: 'ski trip')
+      fill_in('Start date', with: '16/02/2017')
+      fill_in('Target date', with: '16/02/2017')
       click_button('Submit goal')
       expect(page).to have_content 'ski trip'
       expect(page).not_to have_content 'No goals yet'
@@ -30,10 +32,14 @@ feature 'goals' do
       click_link 'Add Goal'
       fill_in('Amount', with: 1500)
       fill_in('Name', with: 'ski trip')
+      fill_in('Start date', with: '16/02/2017')
+      fill_in('Target date', with: '16/02/2017')
       click_button('Submit goal')
       click_link 'Add Goal'
       fill_in('Amount', with: 1500)
       fill_in('Name', with: 'vespa')
+      fill_in('Start date', with: '16/02/2017')
+      fill_in('Target date', with: '16/02/2017')
       click_button('Submit goal')
       expect(page).to have_content "Only permitted to store one goal"
       expect(page).not_to have_content 'vespa'
