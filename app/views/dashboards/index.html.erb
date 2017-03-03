@@ -1,41 +1,67 @@
 
 <h1 style="text-align: center;">Dashboard</h1>
+
+<div id="chart-container" style="width:70%; height:400px; padding-left: 12%; padding-top: 5%;"></div>
+
+<div class="charts">
+<div id="chart-container"style="width:40%; height:250px; padding-left: 3%; margin: 2%;"></div>
+<div id="main-progress-container">
+  <div id="progress-bar-container">
+    <div id="progress-bar">0%</div></div>Progress Bar</div>
+</div>
+
+<br></br>
+
+<div class="outputs">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+    <% if @income.any? %>
+     <% @income.each do |income| %>
+     <tr>
+       <th> <%= income.name %></th>
+       <th> <%= income.amount %></th>
+       <th> <%= income.date.strftime("%d-%m-%y") %></th>
+     </tr>
+     <% end %>
+     <% else %>No Incomes Added
+    <% end %>
+  </table>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+
+<% if @expenditure.any? %>
+ <% @expenditure.each do |expenditure| %>
+    <tr>
+      <th> <%= expenditure.name %></th>
+      <th> <%= expenditure.amount %></th>
+      <th> <%= expenditure.date.strftime("%d-%m-%y") %></th>
+    </tr>
+
+ <% end %>
+ <% else %>No Expenditures Added
+<% end %><br /><br />
+
 <% if @goal.any? %>
    <% @goal.each do |goal| %>
       <%= goal.name %>
      <% end %>
    <% else %>No goals yet
 <% end %>
-<div id="chart-container" style="width:70%; height:400px; padding-left: 12%; padding-top: 5%;"></div>
-
-
-<br></br>
-
-<div id="progress-bar-container"></div>
-<% if @income.any? %>
-
-
- <% @income.each do |income| %>
-    <%= income.name %>
- <% end %>
- <% else %>No Incomes Added
-
-<% end %>
-
-<% if @expenditure.any? %>
-
-
- <% @expenditure.each do |expenditure| %>
-    <%= expenditure.name %>
- <% end %>
- <% else %>No Expenditures Added
-<% end %>
-
-
-<h1 style="text-align: center;">Savings vs Goal</h1>
-<div id="main-progress-container" style="border: blue 2px solid; width:70%; margin-right: 90px; margin-left: 150px; margin-bottom: 10 px; padding: 25px">
-  <div id="progress-bar-container">
-    <div id="progress-bar">0%</div>
-  </div>
 </div>
-<br><br><br>
+
+
+<% if @projection.any? %>
+ <% @projection.each do |projection| %>
+    <%= projection.projected_monthly_income %>
+ <% end %>
+ <% else %>No Projections Added
+
+<% end %>

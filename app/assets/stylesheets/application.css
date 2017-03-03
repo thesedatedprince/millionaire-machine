@@ -13,3 +13,107 @@
  *= require_tree .
  *= require_self
  */
+ .navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  border-bottom: 20px;
+  border-right: 20px;
+  border-top: 20px;
+ }
+
+
+.sign_in_buttons {
+  position: relative;
+  right:10px;
+  font-size: 20px;
+  margin-top: 5px;
+  color: #616161;
+}
+
+a {
+    color: #616161;
+    border-right-width: 3px;
+    border-right-style: solid;
+    border-right-color: #616161;
+    padding-right: 8px;
+}
+
+body {
+color: #616161;
+padding-top: 70px;
+font-family: 'Raleway',sans-serif;
+font-size: 30px;
+font-weight: 800;
+line-height: 20px;
+margin: 24px;
+text-align: center;
+}
+
+h1 {
+  color: #616161;
+  font-family: 'Raleway',sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 36px;
+  margin: 0 0 24px;
+  text-align: center;
+
+}
+
+.footer {
+   font-size: 15px;
+   position: fixed;
+   padding: 1rem;
+   background-color: #efefef;
+   text-align: center;
+   color: #000;
+   height: 35px;
+   left: 0 ;
+   right: 0;
+   bottom: 0;
+ }
+
+ .footer a:hover{
+   cursor: pointer;
+ }
+
+ .user_forms{
+   font-size: 20px;
+ }
+
+ .forgot_password{
+   font-size: 10px;
+ }
+
+ .forgot_password a:hover{
+   color: red;
+ }
+
+ .user_welcome{
+   color: #a71c0b;
+   font-size: 15px;
+   margin-top: 2px;
+   line-height: 30px;
+ }
+
+ input{
+   line-height: 20px;
+ }
+
+ .alert-success {
+   text-align: left;
+   font-size: 15px;
+ }
+
+  .charts {
+    position: relative;
+    float: left;
+    width: 100%;
+  }
+
+  .outputs {
+    position: relative;
+    float: left;
+  }
