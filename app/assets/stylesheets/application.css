@@ -49,6 +49,7 @@ font-weight: 800;
 line-height: 20px;
 margin: 24px;
 text-align: center;
+background-color: transparent;
 }
 
 h1 {
@@ -111,9 +112,66 @@ h1 {
     position: relative;
     float: left;
     width: 100%;
+    padding-right: 20px;
   }
 
-  .outputs {
+  .incomes {
+    color: black;
+    background-color: silver;
+    font-size: 15px;
+    margin-bottom: 70px;
+    margin-right: 10px;
+    padding-right: 0px;
+  }
+
+  .income_wrapper{
+    float: left;
+  }
+
+.table_heading {
+  position: relative;
+  text-align: left;
+  color: black;
+}
+
+  .expenditures {
+    color: black;
+    background-color: silver;
+    font-size: 15px;
+    margin-bottom: 70px;
+    margin-right: 10px;
+    padding-right: 0px;
+  }
+
+  .expenditure_wrapper{
+    float: right;
+  }
+
+  .goals {
     position: relative;
     float: left;
+    color: black;
+    background-color: silver;
+    font-size: 15px;
+    margin-bottom: 70px;
+    margin-right: 10px;
+    padding-right: 0px;
+  }
+
+  .goals td{
+    width: 315px;
+  }
+
+  td {
+    width:180px;
+  }
+
+  .chart-container {
+    height: 100px;
+  }
+
+  .home-bg{
+    background-repeat: no-repeat;
+    background: url('money.png') fixed;
+    background-size: cover;
   }
