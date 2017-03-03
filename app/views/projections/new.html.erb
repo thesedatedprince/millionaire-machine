@@ -1,9 +1,11 @@
+<div class="user_forms">
 <%= form_for @projection do |f| %>
   <%= f.label :projected_monthly_income %>
-  <%= f.text_field :projected_monthly_income %>
+  <%= f.text_field :projected_monthly_income %><br />
   <%= f.label :projected_monthly_expenditure %>
-  <%= f.text_field :projected_monthly_expenditure %>
+  <%= f.text_field :projected_monthly_expenditure %><br />
   <%= f.label :start_date %>
-  <%= f.text_field :start_date %>
+  <%= f.date_field :start_date %><br />
   <%= f.submit %>
   <% end %>
+</div>

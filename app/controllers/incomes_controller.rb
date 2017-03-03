@@ -1,11 +1,10 @@
 class IncomesController < ApplicationController
 
+  before_action :authenticate_user!
+
   def index
 
-    @income_data = Income.all
-
-    # current_user
-    # Income.find(current_user)
+    @income_data = Income.where(user_id: current_user.id)
 
     respond_to do |format|
       format.html
@@ -15,13 +14,13 @@ class IncomesController < ApplicationController
   end
 
   def new
-    p current_user
     @income = Income.new
   end
 
   def create
-    p params
-    Income.create(income_params)
+
+    current_user.incomes.create(income_params)
+
     redirect_to dashboards_path
   end
 

@@ -13,3 +13,171 @@
  *= require_tree .
  *= require_self
  */
+ .navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  border-bottom: 20px;
+  border-right: 20px;
+  border-top: 20px;
+ }
+
+
+.sign_in_buttons {
+  position: relative;
+  right:10px;
+  font-size: 20px;
+  margin-top: 5px;
+  color: #616161;
+}
+
+a {
+    color: #616161;
+    border-right-width: 3px;
+    border-right-style: solid;
+    border-right-color: #616161;
+    padding-right: 8px;
+}
+
+body {
+color: #616161;
+padding-top: 70px;
+font-family: 'Raleway',sans-serif;
+font-size: 30px;
+font-weight: 800;
+line-height: 20px;
+margin: 24px;
+text-align: center;
+background-color: transparent;
+}
+
+h1 {
+  color: #616161;
+  font-family: 'Raleway',sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 36px;
+  margin: 0 0 24px;
+  text-align: center;
+
+}
+
+.footer {
+   font-size: 15px;
+   position: fixed;
+   padding: 1rem;
+   background-color: #efefef;
+   text-align: center;
+   color: #000;
+   height: 35px;
+   left: 0 ;
+   right: 0;
+   bottom: 0;
+ }
+
+ .footer a:hover{
+   cursor: pointer;
+ }
+
+ .user_forms{
+   font-size: 20px;
+ }
+
+ .forgot_password{
+   font-size: 10px;
+ }
+
+ .forgot_password a:hover{
+   color: red;
+ }
+
+ .user_welcome{
+   color: #a71c0b;
+   font-size: 15px;
+   margin-top: 2px;
+   line-height: 30px;
+ }
+
+ input{
+   line-height: 20px;
+ }
+
+ .alert-success {
+   text-align: left;
+   font-size: 15px;
+ }
+
+  .charts {
+    position: relative;
+    float: left;
+    width: 100%;
+    padding-right: 20px;
+  }
+
+  .incomes {
+    color: black;
+    background-color: silver;
+    font-size: 15px;
+    margin-bottom: 70px;
+    margin-right: 10px;
+    padding-right: 0px;
+  }
+
+  .income_wrapper{
+    float: left;
+  }
+
+.table_heading {
+  position: relative;
+  text-align: left;
+  color: black;
+}
+
+  .expenditures {
+    color: black;
+    background-color: silver;
+    font-size: 15px;
+    margin-bottom: 70px;
+    margin-right: 10px;
+    padding-right: 0px;
+  }
+
+  .expenditure_wrapper{
+    float: right;
+  }
+
+  .goals {
+    position: relative;
+    float: left;
+    color: black;
+    background-color: silver;
+    font-size: 15px;
+    margin-bottom: 70px;
+    margin-right: 10px;
+    padding-right: 0px;
+  }
+
+  .goals td{
+    width: 315px;
+  }
+
+  td {
+    width:180px;
+  }
+
+  .chart-container {
+    height: 100px;
+  }
+
+  .home-bg{
+    background-repeat: no-repeat;
+    background: url('money.png') fixed;
+    background-size: cover;
+  }
+  .projection_wrapper{
+    position: relative;
+    float: left;
+    width: 100%;
+    margin-bottom: 140px;
+  }

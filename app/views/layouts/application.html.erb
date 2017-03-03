@@ -3,14 +3,23 @@
   <head>
     <title>MillionaireMachine</title>
     <%= csrf_meta_tags %>
-
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag "http://code.highcharts.com/highcharts.js" %>
 
   </head>
   <body>
-    <% if user_signed_in? %>
+
+<div class="user_signed_in">
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <a href="/dashboards" class="pull-left"><img src="/images/logo.png" height="70px" width="70px"></a>
+    <div class="sign_in_buttons">
+      <% if user_signed_in? %>
+      <div class="user_welcome">
+        Welcome <%= current_user.email %>
+      </div>
       <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
       <%= link_to "Add Income", new_income_path %>
       <%= link_to "Add Expenditure", new_expenditure_path %>
@@ -22,8 +31,22 @@
       <%= link_to "Sign up", new_user_registration_path %>
 
     <% end %>
+
+
+  </div>
+  </div>
+
+</div>
     <%= alert %>
-    <%= notice %>
+    <!-- <%= notice %> -->
     <%= yield %>
+    <footer class="footer">
+            © 2017 Copyright by Million-Machine Team |
+            <a href="https://github.com/thesedatedprince/millionaire-machine" target="_blank">GitHub</a>
+
+
+
+        </footer>
+
   </body>
 </html>
