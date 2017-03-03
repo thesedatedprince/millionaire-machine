@@ -7,14 +7,26 @@ function Expenditure(){
 
 Expenditure.prototype.constructExpendArray = function(dataObj){
 
-  var expDataArray = [];
+  var output = [];
 
   for (i=0; i < dataObj.length; ++i){
     var dataPoint = [dataObj[i].date, dataObj[i].amount];
-    expDataArray.push(dataPoint);
+    output.push(dataPoint);
   }
 
-  return expDataArray
+  return output
+}
+
+Expenditure.prototype.getPureExpArray = function(dataObj){
+
+  var output = [];
+
+  for (i=0; i < dataObj.length; ++i){
+    output.push(dataObj[i].amount);
+  }
+
+  return output
+
 }
 
 Expenditure.prototype.getExpenditureFromDB = function(){
@@ -29,6 +41,8 @@ Expenditure.prototype.getExpenditureFromDB = function(){
 }
 
 exports.Expenditure = Expenditure
+
+
 
 
 })(this);
