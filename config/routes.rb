@@ -6,12 +6,12 @@ Rails.application.routes.draw do
   # root 'application#hello'
 
 
-  resources :dashboards
+  resources :dashboards, :only =>[:index]
 
-  resources :incomes
-  resources :expenditures
-  resources :goals
-  resources :projections
+  resources :incomes, :only =>[:index, :new, :create]
+  resources :expenditures, :only =>[:index, :new, :create]
+  resources :goals, :only =>[:index, :new, :create]
+  resources :projections, :only =>[:index, :new, :create]
 
 
   root 'static_pages#home'
